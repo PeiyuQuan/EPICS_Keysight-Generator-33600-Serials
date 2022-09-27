@@ -1,0 +1,11 @@
+epicsEnvSet("IOC","iocIC")
+epicsEnvSet("TOP","/home/quan/epics/synApps/support/xxx-master")
+epicsEnvSet("SUPPORT","/home/quan/epics/synApps/support")
+epicsEnvSet("ASYN","/home/quan/epics/synApps/support/asyn-master")
+epicsEnvSet("STREAM","/home/quan/epics/synApps/support/StreamDevice-master")
+epicsEnvSet("CALC","/home/quan/epics/synApps/support/calc-master")
+epicsEnvSet("IP","/home/quan/epics/synApps/support/ip-master")
+epicsEnvSet("EPICS_BASE","/home/quan/epics/base")
+epicsEnvSet("AUTOSAVE","/home/quan/epics/synApps/support/autosave-master")
+epicsEnvSet("SSCAN","/home/quan/epics/synApps/support/sscan-master")
+
