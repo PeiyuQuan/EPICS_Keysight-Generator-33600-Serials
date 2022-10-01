@@ -1,0 +1,537 @@
+
+########################General function#############################
+record(stringin,"$(P)$(M):getFunc")
+	{
+		field(DESC, "Function")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getFunc($(N)) $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(mbbo,"$(P)$(M):setFunc")
+	{
+		field(DESC, "Function")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setFunc($(N)) $(PORT)")
+		field(ZRVL, "0")
+		field(ONVL, "1")
+		field(TWVL, "2")
+		field(THVL, "3")
+		field(FRVL, "4")
+		field(FVVL, "5")
+		field(SXVL, "6")
+		field(SVVL, "7")
+		field(EIVL, "8")
+		field(ZRST, "SIN")
+		field(ONST, "SQU")
+		field(TWST, "TRI")
+		field(THST, "RAMP")
+		field(FRST, "PULS")
+		field(FVST, "PRBS")
+		field(SXST, "NOIS")
+		field(SVST, "ARB")
+		field(EIST, "DC")
+	}
+
+##############Frequency##############################
+record (ai, $(P)$(M):getFREQ)
+	{
+		field(DESC, "Frequency")
+		field(DTYP,"stream")
+		field(INP,"@A33600S.proto getFREQ($(N)) $(PORT)")
+		field(SCAN,"1 second")
+		field(EGU, "Hz")
+		field(PREC,"9")
+	}
+	
+record (ao, $(P)$(M):setFREQ)
+	{
+		field(DESC, "Frequency")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setFREQ($(N)) $(PORT)")
+		field(EGU, "Hz")
+		field(PREC, "9")
+	}
+
+
+record (ai, $(P)$(M):getVoltage)
+	{
+		field(DESC, "Voltage")
+		field(DTYP,"stream")
+		field(INP,"@A33600S.proto getVoltage($(N)) $(PORT)")
+		field(SCAN,"1 second")
+		field(EGU, "Vpp")
+		field(PREC,"9")
+	}
+	
+record (ao, $(P)$(M):setVoltage)
+	{
+		field(DESC, "Voltage")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setVoltage($(N)) $(PORT)")
+		field(EGU, "Vpp")
+		field(PREC, "9")
+	}
+
+record (ai, $(P)$(M):getVoltoffset)
+	{
+		field(DESC, "Voltage")
+		field(DTYP,"stream")
+		field(INP,"@A33600S.proto getVoltoffset($(N)) $(PORT)")
+		field(SCAN,"1 second")
+		field(EGU, "mV")
+		field(PREC,"9")
+	}
+	
+record (ao, $(P)$(M):setVoltoffset)
+	{
+		field(DESC, "Voltage")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setVoltoffset($(N)) $(PORT)")
+		field(EGU, "mV")
+		field(PREC, "9")
+	}
+	
+####################################################Trigger subsystem################################
+#Immediate Trigger
+record (bo, $(P)$(M):setTRIG)
+	{
+		field(DESC, "immediate Trigger")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setTRIG($(N)) $(PORT)")
+    }
+
+#Trigger count
+record (longin, $(P)$(M):getTRIGcount)
+	{
+		field(DESC, "Trigger count")
+		field(DTYP,"stream")
+		field(INP,"@A33600S.proto getTRIGcount($(N)) $(PORT)")
+		field(SCAN,"1 second")
+		field(EGU, "seconds")
+	}
+	
+record (longout, $(P)$(M):setTRIGcount)
+	{
+		field(DESC, "Trigger delay")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setTRIGcount($(N)) $(PORT)")
+		field(EGU, "seconds")
+	}
+
+#Trigger delay
+record (ai, $(P)$(M):gettrigdelay)
+	{
+		field(DESC, "Trigger delay")
+		field(DTYP,"stream")
+		field(INP,"@A33600S.proto gettrigdelay($(N)) $(PORT)")
+		field(SCAN,"1 second")
+		field(EGU, "seconds")
+		field(PREC,"9")
+	}
+	
+record (ao, $(P)$(M):settrigdelay)
+	{
+		field(DESC, "Trigger delay")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto settrigdelay($(N)) $(PORT)")
+		field(EGU, "seconds")
+		field(PREC, "9")
+	}
+#Trigger Level
+record (ai, $(P)$(M):getTRIGlevel)
+	{
+		field(DESC, "Trigger Level")
+		field(DTYP,"stream")
+		field(INP,"@A33600S.proto getTRIGlevel($(N)) $(PORT)")
+		field(SCAN,"1 second")
+		field(EGU, "volts")
+		field(PREC,"9")
+	}
+	
+record (ao, $(P)$(M):setTRIGlevel)
+	{
+		field(DESC, "Trigger Level")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setTRIGlevel($(N)) $(PORT)")
+		field(EGU, "volts")
+		field(PREC, "9")
+	}
+
+#Trigger slope
+record(stringin,"$(P)$(M):getTRIGslope")
+	{
+		field(DESC, "Trigger slope")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getTRIGslope($(N)) $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(bo,"$(P)$(M):setTRIGslope")
+	{
+		field(DESC, "Trigger slope")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setTRIGslope($(N)) $(PORT)")
+		field(ZNAM, "POS")
+		field(ONAM, "NEG")
+	}
+
+#TRIGger source
+record(stringin,"$(P)$(M):getTRIGsource")
+	{
+		field(DESC, "TRIGger source")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getTRIGsource($(N)) $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(mbbo,"$(P)$(M):setTRIGsource")
+	{
+		field(DESC, "TRIGger source")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setTRIGsource($(N)) $(PORT)")
+		field(ZRVL, "0")
+		field(ONVL, "1")
+		field(TWVL, "2")
+		field(THVL, "3")
+		field(ZRST, "Immediate")
+		field(ONST, "External")
+		field(TWST, "Timer")
+		field(THST, "Bus")
+	}
+
+#Trigger timer
+record (ai, $(P)$(M):getTRIGtimer)
+	{
+		field(DESC, "Trigger timer")
+		field(DTYP,"stream")
+		field(INP,"@A33600S.proto getTRIGtimer($(N)) $(PORT)")
+		field(SCAN,"1 second")
+		field(EGU, "seconds")
+		field(PREC,"9")
+	}
+	
+record (ao, $(P)$(M):setTRIGtimer)
+	{
+		field(DESC, "Trigger timer")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setTRIGtimer($(N)) $(PORT)")
+		field(EGU, "seconds")
+		field(PREC, "9")
+	}
+
+
+#Angle unit
+record(stringin,"$(P)$(M):getangleunit")
+	{
+		field(DESC, "Angle unit")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getangleunit $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(mbbo,"$(P)$(M):setangleunit")
+	{
+		field(DESC, "Angle unit")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setangleunit $(PORT)")
+		field(ZRVL, "0")
+		field(ONVL, "1")
+		field(TWVL, "2")
+		field(THVL, "3")
+		field(ZRST, "Degree")
+		field(ONST, "Radian")
+		field(TWST, "Second")
+		field(THST, "Default")
+	}
+
+###########################################################Burst##############
+# Burst state
+record(stringin,"$(P)$(M):getBURSstate")
+	{
+		field(DESC, "burst state")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getBURSstate($(N)) $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(bo,"$(P)$(M):setBURSstate")
+	{
+		field(DESC, "burst state")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setBURSstate($(N)) $(PORT)")
+		field(ZNAM, "off")
+		field(ONAM, "on")
+	}
+
+# Burst Gate
+
+record(stringin,"$(P)$(M):getBURSgatePol")
+	{
+		field(DESC, "burst gate")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getBURSgatePol($(N)) $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(bo,"$(P)$(M):setbursgatePol")
+	{
+		field(DESC, "burst gate")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setBURSgatePol($(N)) $(PORT)")
+		field(ZNAM, "NORM")
+		field(ONAM, "INV")
+	}
+	
+#Burst Mode
+record(stringin,"$(P)$(M):getBURSmode")
+	{
+		field(DESC, "burst mode")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getBURSmode($(N)) $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(bo,"$(P)$(M):setBURSmode")
+	{
+		field(DESC, "burst mode")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setBURSmode($(N)) $(PORT)")
+		field(ZNAM, "TRIG")
+		field(ONAM, "GAT")
+	}
+
+#set Burst period for internally-triggered
+record (ai, $(P)$(M):getburstintper)
+	{
+		field(DTYP,"stream")
+		field(INP,"@A33600S.proto getBURSintper($(N)) $(PORT)")
+		field(SCAN,"1 second")
+		field(EGU, "seconds")
+		field(PREC,"6")
+	}
+	
+record (ao, $(P)$(M):setburstintper)
+	{
+		field(DTYP,"stream")
+		field(OUT,"@A33600S.proto setBURSintper($(N)) $(PORT)")
+		field(EGU, "seconds")
+		field(PREC,"6")
+	}
+
+#the number of cycles in burst
+record(longin,"$(P)$(M):getBURSncyc")
+	{
+		field(DESC,"number of cycles")
+		field(DTYP,"stream")
+		field(INP,"@A33600S.proto getBURSncyc($(N)) $(PORT)")
+		field(SCAN, "1 second")
+	}
+
+record(longout,"$(P)$(M):setBURSncyc")
+	{
+		field(DESC,"number of cycles")
+		field(DTYP,"stream")
+		field(OUT,"@A33600S.proto setBURSncyc($(N)) $(PORT)")
+	}
+	
+#Burst phase
+record(ai,"$(P)$(M):getBURSphase")
+	{
+		field(DESC,"Phase angle")
+		field(DTYP,"stream")
+		field(INP,"@A33600S.proto getBURSphase($(N)) $(PORT)")
+		field(EGU, "DEG")
+		field(SCAN, "1 second")
+	}
+
+record(ao,"$(P)$(M):setBURSphase")
+	{
+		field(DESC,"Phase angle")
+		field(DTYP,"stream")
+		field(OUT,"@A33600S.proto setBURSphase($(N)) $(PORT)")
+		field(EGU, "DEG")
+	}
+	
+	
+###############################output subsystem###################################
+record(stringin,"$(P)$(M):getoutput")
+	{
+		field(DESC, "output")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getoutput($(N)) $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(bo,"$(P)$(M):setoutput")
+	{
+		field(DESC, "output")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setoutput($(N)) $(PORT)")
+		field(ZNAM, "OFF")
+		field(ONAM, "ON")
+	}
+	
+
+record(ai,"$(P)$(M):getoutpload")
+	{
+		field(DESC,"output load")
+		field(DTYP,"stream")
+		field(INP,"@A33600S.proto getoutpload($(N)) $(PORT)")
+		field(EGU, "ohm")
+		field(SCAN, "1 second")
+	}
+
+record(ao,"$(P)$(M):setoutpload")
+	{
+		field(DESC,"output load")
+		field(DTYP,"stream")
+		field(OUT,"@A33600S.proto setoutpload($(N)) $(PORT)")
+		field(EGU, "ohm")
+	}	
+	
+record(stringin,"$(P)$(M):getoutpmode")
+	{
+		field(DESC, "output mode")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getoutpmode($(N)) $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(bo,"$(P)$(M):setoutpmode")
+	{
+		field(DESC, "output mode")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setoutpmode($(N)) $(PORT)")
+		field(ZNAM, "NORM")
+		field(ONAM, "GAT")
+	}	
+
+record(stringin,"$(P)$(M):getoutppol")
+	{
+		field(DESC, "Output Polarity")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getoutppol($(N)) $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(bo,"$(P)$(M):setoutppol")
+	{
+		field(DESC, "Output Polarity")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setoutppol($(N)) $(PORT)")
+		field(ZNAM, "NORM")
+		field(ONAM, "INV")
+	}
+
+
+#record(stringin,"$(P)$(M):getoutpsync")
+#	{
+#		field(DESC, "output sync")
+#		field(DTYP, "stream")
+#		field(INP, "@A33600S.proto getoutpsync $(PORT)")
+#		field(SCAN, "1 second")
+#	}
+	
+#record(bo,"$(P)$(M):setoutpsync")
+#	{
+#		field(DESC, "output sync")
+#		field(DTYP, "stream")
+#		field(OUT, "@A33600S.proto setoutpsync $(PORT)")
+#		field(ZNAM, "OFF")
+#		field(ONAM, "ON")
+#	}
+
+#record(stringin,"$(P)$(M):getoutpsyncmode")
+#	{
+#		field(DESC, "output sync mode")
+#		field(DTYP, "stream")
+#		field(INP, "@A33600S.proto getoutpsyncmode($(N)) $(PORT)")
+#		field(SCAN, "1 second")
+#	}
+	
+#record(mbbo,"$(P)$(M):setoutpsyncmode")
+#	{
+#		field(DESC, "output sync mode")
+#		field(DTYP, "stream")
+#		field(OUT, "@A33600S.proto setoutpsyncmode($(N)) $(PORT)")
+#		field(ZRVL, "0")
+#		field(ONVL, "1")
+#		field(TWVL, "2")
+#		field(ZRST, "NORM")
+#		field(ONST, "CARR")
+#		field(TWST, "MARK")
+#	}
+
+#record(stringin,"$(P)$(M):getoutpsyncsour")
+#	{
+#		field(DESC, "output sync source")
+#		field(DTYP, "stream")
+#		field(INP, "@A33600S.proto getoutpsyncsour $(PORT)")
+#		field(SCAN, "1 second")
+#	}
+	
+#record(bo,"$(P)$(M):setoutpsyncsour")
+#	{
+#		field(DESC, "output sync source")
+#		field(DTYP, "stream")
+#		field(OUT, "@A33600S.proto setoutpsyncsour $(PORT)")
+#		field(ZNAM, "CH1")
+#		field(ONAM, "CH2")
+#	}
+
+
+record(stringin,"$(P)$(M):getoutptrig")
+	{
+		field(DESC, "output trigger")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getoutptrig $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(bo,"$(P)$(M):setoutptrig")
+	{
+		field(DESC, "output trigger")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setoutptrig $(PORT)")
+		field(ZNAM, "OFF")
+		field(ONAM, "ON")
+	}
+
+record(stringin,"$(P)$(M):getoutptrigslop")
+	{
+		field(DESC, "output trigger slope")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getoutptrigslop $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(bo,"$(P)$(M):setoutptrigslop")
+	{
+		field(DESC, "output trigger slope")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setoutptrigslop $(PORT)")
+		field(ZNAM, "POS")
+		field(ONAM, "NEG")
+	}
+
+record(stringin,"$(P)$(M):getoutptrigsour")
+	{
+		field(DESC, "output trigger source")
+		field(DTYP, "stream")
+		field(INP, "@A33600S.proto getoutptrigsour $(PORT)")
+		field(SCAN, "1 second")
+	}
+	
+record(bo,"$(P)$(M):setoutptrigsour")
+	{
+		field(DESC, "output trigger source")
+		field(DTYP, "stream")
+		field(OUT, "@A33600S.proto setoutptrigsour $(PORT)")
+		field(ZNAM, "CH1")
+		field(ONAM, "CH2")
+	}
+
+
+
+	

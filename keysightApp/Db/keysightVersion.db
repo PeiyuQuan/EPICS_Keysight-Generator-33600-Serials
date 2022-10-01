@@ -1,0 +1,6 @@
+record(lsi, "$(user):keysight:version") {
+    field(DTYP, "keysight version")
+    field(DESC, "Version string")
+    field(SIZV, "$(SIZV=200)")
+    field(PINI, "YES")
+}
