@@ -1,0 +1,123 @@
+
+#Function
+setFunc {out "SOUR\$1:FUNC %{SIN|SQU|TRI|RAMP|PULS|PRBS|NOIS|ARB|DC}";}
+getFunc {out "SOUR\$1:FUNC?"; in "%s";}
+
+#Frequency
+setFREQ {out "SOUR\$1:FREQ %f";}
+getFREQ {out "SOUR\$1:FREQ?"; in "%f";}
+
+#Voltage
+setVoltage {out "SOUR\$1:VOLT %f";}
+getVoltage {out "SOUR\$1:VOLT?"; in "%f";}
+
+#Voltage offset
+setVoltoffset {out "SOUR\$1:VOLT:OFFS %f";}
+getVoltoffset {out "SOUR\$1:VOLT:OFFS?"; in "%f";}
+
+######################################################Burst subsystem##################################################
+#set Burst gate polarity
+
+setBURSgatePol {out "SOUR\$1:BURS:GATE:POL %{NORM|INV}";}
+getBURSgatePol {out "SOUR\$1:BURS:GATE:POL?"; in "%s";}
+
+#set burst internal Period
+setBURSintper {out "SOUR\$1:BURS:INT:PER %f";}
+getBURSintper {out "SOUR\$1:BURS:INT:PER?";in "%f";}
+
+
+#burstmode
+setBURSmode {out "SOUR\$1:BURS:MODE %{TRIG|GAT}";}
+getBURSmode {out "SOUR\$1:BURS:MODE?"; in "%s";}
+
+#Source burst ncycles
+setBURSncyc {out "SOUR\$1:BURS:NCYC %f";}
+getBURSncyc {out "SOUR\$1:BURS:NCYC?"; in "%f";}
+
+#burst phase
+setBURSphase  {out "SOUR\$1:BURS:PHAS %f";}
+getBURSphase  {out "SOUR\$1:BURS:PHAS?"; in "%f";}
+
+
+#burst state
+setBURSstate {out "SOUR\$1:BURS:STAT %{OFF|ON}";}
+getBURSstate {out "SOUR\$1:BURS:STAT?"; in "%s";}
+
+##########################################Trigger subsystem#######################################
+#immediate Trigger 
+setTRIG {out "TRIG\$1";}
+
+#Trigger count
+setTRIGcount {out "TRIG\$1:COUN %f";}
+getTRIGcount {out "TRIG\$1:COUN?"; in "%f";}
+
+#Trigger delay
+settrigdelay {out "TRIG\$1:DEL %f";}
+gettrigdelay {out "TRIG\$1:DEL?"; in "%f";}
+
+#Trigger Level
+setTRIGlevel {out "TRIG\$1:LEV %f";}
+getTRIGlevel {out "TRIG\$1:LEV?"; in "%f";}
+
+#Trigger SLOPE
+setTRIGslope {out "TRIG\$1:SLOP %{POS|NEG}";}
+getTRIGslope {out "TRIG\$1:SLOP?"; in "%s";}
+
+#TRIGger source
+setTRIGsource {out "TRIG\$1:SOUR %{IMM|EXT|TIM|BUS}";}
+getTRIGsource {out "TRIG\$1:SOUR?"; in "%s";}
+
+#Trigger timer
+setTRIGtimer {out "TRIG\$1:TIM %f";}
+getTRIGtimer {out "TRIG\$1:TIM?"; in "%f";}
+
+############################################################################################
+#Unit angle
+setangleunit {out "UNIT:ANGL %{DEG|RAD|SEC|DEF}";}
+getangleunit {out "UNIT:ANGL?"; in "%s";}
+
+#######################################################################################
+####################################Output Subsystem###############################
+#output
+setoutput {out "OUTP\$1 %{OFF|ON}";}
+getoutput {out "OUTP\$1?"; in"%s";}
+
+#output load
+setoutpload {out "OUTP\$1:LOAD %f";}
+getoutpload {out "OUTP\$1:LOAD?"; in "%f";}
+
+#output mode
+setoutpmode {out "OUTP\$1:MODE %{NORM|GAT}";}
+getoutpmode {out "OUTP\$1:MODE?"; in "%s";}
+
+#Output polarity
+setoutppol {out "OUTP\$1:POL %{NORM|INV}";}
+getoutppol {out "OUTP\$1:POL?"; in "%s";}
+
+#OUTPUT SYNC
+#setoutpsync {out "OUTP:SYNC %{ON|OFF}";}
+#getoutpsync {out "OUTP:SYNC?"; in "%s";}
+
+
+#OUTPUT SYNC MODE
+#setoutpsyncmode {out "OUTP\$1:SYNC:MODE %{NORM|CARR|MARK}";}
+#getoutpsyncmode {out "OUTP\$1:SYNC:MODE?"; in "%s";}
+
+#OUTPUT SYNC SOURCE
+#setoutpsyncsour {out "OUTP:SYNC:SOUR %{CH1|CH2}";}
+#getoutpsyncsour {out "OUTP:SYNC:SOUR?"; in "%s";}
+
+#OUTPUT TRIGGER
+setoutptrig {out "OUTP:TRIG %{OFF|ON}";}
+getoutptrig {out "OUTP:TRIG?"; in "%s";}
+
+#OUTPUT TRIGGER SLOPE
+setoutptrigslop {out "OUTP:TRIG:SLOP %{POS|NEG}";}
+getoutptrigslop {out "OUTP:TRIG:SLOP?"; in "%s";}
+
+#OUTPUT TRIGER SOURCE
+setoutptrigsour {out "OUTP:TRIG:SOUR %{CH1|CH2}";}
+getoutptrigsour {out "OUTP:TRIG:SOUR?"; in"%s";}
+
+
+
