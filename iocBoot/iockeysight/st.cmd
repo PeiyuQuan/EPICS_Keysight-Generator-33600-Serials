@@ -26,7 +26,8 @@ dbLoadRecords("${TOP}/keysightApp/Db/A33600S.db","P=$(PREFIX),PORT=usbtmc1,M=m1,
 dbLoadRecords("${TOP}/keysightApp/Db/A33600S.db","P=$(PREFIX),PORT=usbtmc1,M=m2,N=2")
 
 dbLoadRecords("$(ASYN)/db/asynRecord.db", "P=$(PREFIX),R=asyn1,PORT=usbtmc1,ADDR=0,IMAX=80,OMAX=80")
-
+asynSetTraceIOMask("usbtmc1",0,2)
+asynSetTraceMask("usbtmc1",0,9)
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit
