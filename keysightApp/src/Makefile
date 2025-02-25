@@ -56,7 +56,6 @@ keysight_DBD += drvAsynSerialPort.dbd
 keysight_DBD += calc.dbd
 keysight_DBD += stream-scalcout.dbd
 keysight_DBD += stream.dbd
-keysight_DBD += as.dbd
 keysight_DBD += asSupport.dbd
 # keysight_registerRecordDeviceDriver.cpp derives from keysight.dbd
 keysight_SRCS += keysight_registerRecordDeviceDriver.cpp
